@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} RSVP {% endblock %}
+
+{% block content %}
+    <h2>RSVP</h2>
+<br>
+    <p>Please respond by 1st May 2022, and be sure to share the names of all guests in your party. </p>
+     <nav>
+         <a href="/list">Guests list</a>
+     </nav>
+    <br><br>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-style {% if field.errors %} errors {% endif %} ">
+                {{ field.label_tag }}
+                {{ field.errors }}
+                {{ field }}
+            </div>
+        {% endfor %}
+        <button>Send</button>
+    </form>
+
+{% endblock %}

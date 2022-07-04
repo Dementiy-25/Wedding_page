@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %} Guests list {% endblock %}
+body{
+    background-color: #ffffff; /* Цвет фона веб-страницы */
+   }
+{% block content %}
+
+    <h2> Guests list</h2>
+    <nav>
+         <a href="/">Main</a> |
+         <a href="/rsvp">RSVP</a>
+     </nav>
+<!--    <ol>-->
+<!--        {% for feedback in object_list %}-->
+<!--            <li> {{feedback.first_name}} {{feedback.last_name}}: {{feedback.choice}}</li>-->
+<!--        {% endfor %}-->
+<!--    </ol>-->
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Choice</th>
+			<th>Add Person</th>
+			<th>Comments</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for feedback in object_list %}
+		<tr>
+            <td>{{feedback.first_name}}</td>
+			<td>{{feedback.last_name}}</td>
+			<td>{{feedback.choice}}</td>
+			<td>{{feedback.add_person}}</td>
+			<td>{{feedback.feedback}}</td>
+
+        </tr>
+
+		{% endfor %}
+	</tbody>
+</table>
+
+{% endblock %}

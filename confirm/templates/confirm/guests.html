@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All guests</title>
+</head>
+<body>
+    <h2>All guests list</h2>
+    <nav>
+        <a href="/">Main</a>
+    </nav>
+    <ul>
+        {% for guest in guests %}
+            <li><a href="{{ guest.get_url }}">{{guest.first_name}} {{guest.last_name}}</a> </li>
+        {% endfor%}
+    </ul>
+
+    <h3>Total number of guests - {{agg.id__count}}</h3>
+</body>
+</html>

@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Information about guest</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+</style>
+<style type="text/css">
+
+body{
+    background-color: #ffc0cb; /* Цвет фона веб-страницы */
+   }
+
+
+</style>
+
+</head>
+<body>
+
+
+<div class="navbar">
+  <a href="/">Home</a>
+  <a href="/rsvp">RSVP</a>
+  <a href="/faq">FAQ</a>
+
+</div>
+
+
+    <h2 style="font-style:italic" align="center"><u>Information about {{guest.first_name}} {{guest.last_name}}</u></h2>
+    <h3 style="color:#ffffff">age - {{guest.age}}</h3>
+    <h3 style="color:#ffffff">gender - {{guest.gender}}</h3>
+<div style="font-style:oblique" align="center">HGJHGhghsdg  ajsghdjahsgda aksjgdakjshd ajhhdkajhdskajhd aks djhjhh kjhskdjahsd asasdasdasgasdgsdgdgfgasdg</div>
+<br>
+    <p align="center">sdj,msnf,msanfd,msanf,smnf,mnf,n lkjdflkjlkj  lkjflkjdfkjsf ldkjflksdjf kjfagadsgasdf</p>
+    {% if guest.gender == 'f' %}
+       <h3> She is from {{ guest.country.country }} </h3>
+    {% else %}
+        <h3>He is from {{ guest.country.country }} </h3>
+    {% endif %}
+    <nav>
+        <a href="/">Main</a> |
+        <a href="/guests">Guests list</a>
+    </nav>
+
+
+
+
+
+</body>
+</html>
