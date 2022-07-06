@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic.base import RedirectView
 
 admin.site.site_header = 'Моя админка'
 
@@ -23,5 +24,6 @@ urlpatterns = [
     path('', include('confirm.urls')),
     path('faq/', include('confirm.urls')),
     path('rsvp/', include('confirm.urls')),
-    path('__debug__/', include('debug_toolbar.urls'))
+    path('__debug__/', include('debug_toolbar.urls')),
+path('favicon.ico/', RedirectView.as_view(url='/static/img/favicon/favicon.ico')),
 ]
